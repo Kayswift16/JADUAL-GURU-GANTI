@@ -1,4 +1,3 @@
-
 interface AbsentTeacherInfo {
   name: string;
   reason: string;
