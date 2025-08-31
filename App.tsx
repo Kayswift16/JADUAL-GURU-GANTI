@@ -1,9 +1,10 @@
+
 import React, { useState, useCallback, useEffect } from 'react';
-import { Header } from './components/Header';
-import { AbsentTeacherForm } from './components/PromptInput';
-import { SubstituteSchedule } from './components/ImageDisplay';
-import { Footer } from './components/Footer';
-import { generateSubstitutes } from './services/geminiService';
+import { Header } from './components/Header.tsx';
+import { AbsentTeacherForm } from './components/PromptInput.tsx';
+import { SubstituteSchedule } from './components/ImageDisplay.tsx';
+import { Footer } from './components/Footer.tsx';
+import { generateSubstitutes } from './services/geminiService.ts';
 
 export interface AbsentTeacher {
   id: number;
@@ -96,7 +97,7 @@ const App: React.FC = () => {
       setSchedule(generatedSchedule);
     } catch (err) {
       console.error(err);
-      setError('Gagal menjana cadangan. Sila cuba lagi.');
+      setError((err as Error).message || 'Gagal menjana cadangan. Sila cuba lagi.');
     } finally {
       setIsLoading(false);
     }
