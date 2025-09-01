@@ -9,7 +9,7 @@ export async function generateSubstitutes(
   day: string
 ): Promise<any> {
   try {
-    const response = await fetch('/api/generate', {
+    const response = await fetch('/.netlify/functions/generate', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ export async function generateSubstitutes(
     return responseBody;
 
   } catch (error) {
-    console.error("Ralat memanggil Vercel function:", error);
+    console.error("Ralat memanggil Netlify function:", error);
     throw new Error("Gagal menghubungi perkhidmatan AI. Sila semak sambungan anda.");
   }
 }

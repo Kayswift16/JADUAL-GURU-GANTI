@@ -8,6 +8,6 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "api/**/*.ts"
+    "netlify/functions/**/*.ts"
   ]
 }
